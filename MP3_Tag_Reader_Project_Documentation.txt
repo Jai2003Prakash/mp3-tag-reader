@@ -1,0 +1,56 @@
+MP3 TAG READER PROJECT DOCUMENTATION
+=================================
+
+PROJECT OVERVIEW
+The MP3 Tag Reader is a command-line desktop application written in C that reads,
+displays, and edits metadata stored in MP3 files using ID3 standards.
+
+INTRODUCTION TO ID3
+ID3 is a metadata container used with MP3 files.
+Versions:
+ID3v1 - Stored at end of file (128 bytes)
+ID3v2 - Stored at beginning of file (flexible frame structure)
+
+ID3v1 STRUCTURE (128 BYTES)
+TAG (3 bytes), Title (30), Artist (30), Album (30), Year (4),
+Comment (30), Genre (1)
+
+ID3v2 HEADER
+Identifier "ID3", Version, Flags, Size
+
+COMMON FRAMES
+TIT2 - Title
+TPE1 - Artist
+TALB - Album
+TYER - Year
+TCON - Genre
+COMM - Comments
+APIC - Album Art
+
+MANDATORY FEATURES
+- Support ID3v1 and ID3v2 (except v2.4)
+- Detect tag version
+- Display metadata
+- Edit metadata
+- Help screen
+- Show album art details
+- Error messages if tag missing
+
+ADDITIONAL FEATURES
+- Extract album art
+- Delete all tags
+- Delete selected tag
+- Support ID3v2.4
+
+SAMPLE COMMANDS
+mp3tag -h
+mp3tag -v song.mp3
+mp3tag -t "New Title" song.mp3
+
+APPLICATIONS
+Music players, media libraries, audio tools
+
+TECHNOLOGIES
+C programming, file handling, binary parsing
+
+END OF DOCUMENT
